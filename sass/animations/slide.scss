@@ -1,0 +1,92 @@
+//
+//El elemento aparece desde la Izquierda.
+//
+
+@mixin slideLeft($time) {
+    animation: slideLeft $time;
+    @keyframes slideLeft {
+        from{
+            transform: translate3d(-100%,0,0);
+        }        
+    }
+}
+
+//
+//El elemento aparece desde la Derecha.
+//
+
+@mixin slideRight($time) {
+    animation: slideRight $time;
+    @keyframes slideRight {
+        from{
+            transform: translate3d(100%,0,0);
+        }        
+    }
+}
+
+//
+//El elemento aparece desde la Arriba.
+//
+
+@mixin slideTop($time) {
+    animation: slideTop $time;
+    @keyframes slideTop {
+        from{
+            transform: translate3d(0,-100%,0);
+        }        
+    } 
+}
+
+//
+//El elemento se contrae desde abajo
+//
+
+@mixin slideBottom($time) {
+    animation: slideBottom $time;
+    @keyframes slideBottom {
+        from{
+            transform: translate3d(0,100%,0);
+        }        
+    } 
+}
+
+//
+//El elemento se despliega desde arriba.
+//
+
+@mixin slideDown($time,$height:800px) {
+    max-height: 0;
+    overflow: hidden;
+
+    animation: slideDown $time forwards;
+
+    @keyframes slideDown {
+        to{
+            max-height: $height;
+        }
+    }
+}
+
+//
+//El elemento se despliega desde abajo.
+//
+
+@mixin slideUp($time,$height:800px) {
+    max-height: $height;
+    overflow: hidden;
+
+    animation: slideUp $time forwards;
+
+    @keyframes slideUp {
+        to{
+            max-height: 0; 
+        }
+    }
+}
+
+.slideLeft,.slide-left,.slideleft       { @include slideLeft(2s)       }
+.slideRight,.slide-right,.slideright    { @include slideRight(2s)      }
+.slideTop,.slide-top,.slidetop          { @include slideTop(2s)        } 
+.slideBottom,.slide-bottom,.slidebottom { @include slideBottom(2s)     }
+.slideDown,.slide-down,.slidedown       { @include slideDown(5s,100px) }
+.slideUp,.slide-up,.slideup             { @include slideUp(5s,100px)   }

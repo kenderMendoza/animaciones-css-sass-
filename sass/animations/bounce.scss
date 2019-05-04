@@ -1,0 +1,85 @@
+//
+// Bounce left
+//
+
+@mixin bounceLeft($time) {
+    animation: bounceLeft $time forwards;
+    transform: translate3d(-100%,0,0);    
+
+
+    @keyframes bounceLeft { 
+        30%{
+            transform: translate3d(20%,0,0);    
+        } 
+
+        100%{
+            transform: translate3d(0,0,0);    
+        }       
+    }
+}
+
+//
+// Bounce Right
+//
+
+@mixin bounceRight($time) {
+    animation: bounceRight $time forwards;
+    transform: translate3d(100%,0,0);    
+
+
+    @keyframes bounceRight { 
+        30%{
+            transform: translate3d(-20%,0,0);    
+        } 
+
+        100%{
+            transform: translate3d(0,0,0);    
+        }       
+    }
+}
+
+//
+// Bounce Top
+//
+
+@mixin bounceTop($time) {
+    animation: bounceTop $time forwards;
+    transform: translate3d(0,-100%,0);    
+
+
+    @keyframes bounceTop { 
+        30%{
+            transform: translate3d(0,30%,0);    
+        } 
+
+        100%{
+            transform: translate3d(0,0,0);    
+        }       
+    }
+}
+
+//
+// Bounce Bottom
+//
+
+@mixin bounceBottom($time) {
+    animation: bounceBottom $time forwards;
+    transform: translate3d(0,100%,0);    
+
+
+    @keyframes bounceBottom { 
+        30%{
+            transform: translate3d(0,-30%,0);    
+        } 
+
+        100%{
+            transform: translate3d(0,0,0);    
+        }       
+    }
+}
+
+
+.bounceLeft,.bounceleft,.bounce-left        { @include bounceLeft(2s)   }  
+.bounceTop,.bouncetop,.bounce-top           { @include bounceTop(2s)    }
+.bounceRight,.bounceright,.bounce-right     { @include bounceRight(2s)  }
+.bounceBottom,.bouncebottom,.bounce-bottom  { @include bounceBottom(2s) }
